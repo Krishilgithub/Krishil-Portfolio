@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Achievements', href: '#achievements' },
-  { name: 'Contact', href: '#contact' },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
+  { name: "Achievements", href: "#achievements" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const Header = () => {
@@ -23,8 +23,8 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -32,14 +32,16 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0A192F]/80 backdrop-blur-lg' : 'bg-transparent'
+        isScrolled ? "bg-[#0A192F]/80 backdrop-blur-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold gradient-text">Krishil Agrawal</span>
+            <span className="text-2xl font-bold gradient-text">
+              Krishil Agrawal
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -72,9 +74,9 @@ const Header = () => {
       {/* Mobile Menu */}
       <motion.div
         initial={false}
-        animate={isMobileMenuOpen ? 'open' : 'closed'}
+        animate={isMobileMenuOpen ? "open" : "closed"}
         variants={{
-          open: { opacity: 1, height: 'auto' },
+          open: { opacity: 1, height: "auto" },
           closed: { opacity: 0, height: 0 },
         }}
         className="md:hidden bg-[#0A192F]/95 backdrop-blur-lg"
@@ -96,4 +98,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

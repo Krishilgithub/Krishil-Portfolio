@@ -23,7 +23,7 @@ const education = [
       "Database Management",
       "Machine Learning",
     ],
-    logo: "/images/logos/charusat.svg",
+    logo: "/images/education/depstar.jpg",
     achievements:
       "CGPA: 9.29. Active member of coding clubs and technical societies.",
   },
@@ -37,7 +37,7 @@ const education = [
     description:
       "Completed higher secondary education with a focus on science and mathematics, building a strong foundation for future computer science studies.",
     courses: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
-    logo: "/images/logos/shannen.svg",
+    logo: "/images/education/shannen.jpg",
     achievements:
       "Achieved a percentile of 98.01. Participated in various science and technology competitions.",
   },
@@ -51,7 +51,7 @@ const education = [
     description:
       "Received comprehensive education with emphasis on foundational sciences and mathematics.",
     courses: ["Mathematics", "Science", "Computer Applications", "English"],
-    logo: "/images/logos/shannen.svg",
+    logo: "/images/education/shannen.jpg",
     achievements:
       "Achieved a percentage of 97.5. Recognized for excellence in science and mathematics.",
   },
@@ -106,9 +106,9 @@ const Education = () => {
                       <Image
                         src={item.logo}
                         alt={item.institution}
-                        width={40}
-                        height={40}
-                        className="object-contain"
+                        width={50}
+                        height={50}
+                        className="object-cover w-full h-full"
                       />
                     </div>
                     <div>
@@ -198,21 +198,52 @@ const Education = () => {
               <p className="text-[#8892B0] mb-6">
                 I'm committed to staying at the forefront of AI and machine
                 learning advancements through continuous education and research.
-                Learning is a lifelong process in this rapidly evolving field.
               </p>
-              <div className="flex justify-center gap-4 flex-wrap">
-                <span className="px-4 py-2 bg-[#233554] text-[#CCD6F6] rounded-full text-sm inline-flex items-center shadow-glow">
-                  <span className="w-2 h-2 bg-[#7B61FF] rounded-full mr-2"></span>
-                  Research Publications
-                </span>
-                <span className="px-4 py-2 bg-[#233554] text-[#CCD6F6] rounded-full text-sm inline-flex items-center shadow-glow">
-                  <span className="w-2 h-2 bg-[#FF61D8] rounded-full mr-2"></span>
-                  Industry Conferences
-                </span>
-                <span className="px-4 py-2 bg-[#233554] text-[#CCD6F6] rounded-full text-sm inline-flex items-center shadow-glow">
-                  <span className="w-2 h-2 bg-[#00EEFF] rounded-full mr-2"></span>
-                  Online Courses
-                </span>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                  href="/resume/Krishil Agrawal Resume - Web.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#233554] hover:bg-[#2A3F63] transition-colors rounded-lg text-[#CCD6F6] border border-[#7B61FF]/30"
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                  Web Development Resume
+                </a>
+                <a
+                  href="/resume/Krishil Agrawal Resume - ML.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#233554] hover:bg-[#2A3F63] transition-colors rounded-lg text-[#CCD6F6] border border-[#FF61D8]/30"
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                  </svg>
+                  Machine Learning Resume
+                </a>
               </div>
             </div>
           </Card>

@@ -9,7 +9,7 @@ import Image from "next/image";
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/yourusername",
+    href: "https://github.com/Krishilgithub",
     icon: (
       <svg
         className="w-5 h-5"
@@ -27,7 +27,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/krishil-agrawal-49aaa9283",
     icon: (
       <svg
         className="w-5 h-5"
@@ -40,8 +40,8 @@ const socialLinks = [
     ),
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/yourusername",
+    name: "Kaggle",
+    href: "https://www.kaggle.com/krishil1",
     icon: (
       <svg
         className="w-5 h-5"
@@ -49,13 +49,14 @@ const socialLinks = [
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
-        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+        <path d="M17.8 17.7c-.1 0-.2 0-.3-.1l-4.8-4.1L9 17.7c-.2.2-.5.2-.8 0c-.2-.2-.2-.6 0-.8l4-3.5l-4-3.4c-.2-.2-.2-.6 0-.8c.2-.2.5-.2.8 0l3.8 3.2l4.8-4.1c.2-.2.6-.1.8.1c.2.2.1.6-.1.8L13.6 13l4.5 3.9c.2.2.3.5.1.8C18.1 17.6 18 17.7 17.8 17.7z" />
+        <path d="M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12S6.5 2 12 2S22 6.5 22 12zM12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8s8-3.6 8-8S16.4 4 12 4z" />
       </svg>
     ),
   },
   {
-    name: "Kaggle",
-    href: "https://kaggle.com/yourusername",
+    name: "LeetCode",
+    href: "https://leetcode.com/AM7GNY5zb4/",
     icon: (
       <svg
         className="w-5 h-5"
@@ -63,12 +64,7 @@ const socialLinks = [
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
-        <path d="M17.5 12.5c0 .414-.336.75-.75.75h-1.25v1.75c0 .414-.336.75-.75.75h-2.5c-.414 0-.75-.336-.75-.75v-1.75h-1.25c-.414 0-.75-.336-.75-.75v-2.5c0-.414.336-.75.75-.75h1.25v-1.75c0-.414.336-.75.75-.75h2.5c.414 0 .75.336.75.75v1.75h1.25c.414 0 .75.336.75.75v2.5z" />
-        <path
-          clipRule="evenodd"
-          d="M2 18.5A2.5 2.5 0 004.5 21h15a2.5 2.5 0 002.5-2.5v-15A2.5 2.5 0 0019.5 1h-15A2.5 2.5 0 002 3.5v15zM4.5 3h15a.5.5 0 01.5.5v15a.5.5 0 01-.5.5h-15a.5.5 0 01-.5-.5v-15a.5.5 0 01.5-.5z"
-          fillRule="evenodd"
-        />
+        <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z" />
       </svg>
     ),
   },
@@ -170,7 +166,7 @@ const Footer = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold gradient-text">
-                ML & Web Dev Portfolio
+                Krishil Agrawal Portfolio
               </h3>
             </div>
             <p className="text-[#8892B0] mb-6">
@@ -304,7 +300,7 @@ const Footer = () => {
 
         {/* Copyright and Credits */}
         <div className="mt-12 pt-8 border-t border-[#112240] flex flex-col md:flex-row justify-between items-center text-center md:text-left text-[#8892B0] text-sm">
-          <p>© {currentYear} ML & Web Dev Portfolio. All rights reserved.</p>
+          <p>© {currentYear} Krishil Agrawal Portfolio. All rights reserved.</p>
 
           <div className="mt-4 md:mt-0 flex items-center space-x-2">
             <span>Made with</span>

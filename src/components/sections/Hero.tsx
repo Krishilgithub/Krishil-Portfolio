@@ -225,10 +225,7 @@ const Hero = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="transition-all duration-300 hover:border-[#FF61D8] border-[#FF61D8] text-[#FF61D8]"
-                    onClick={() =>
-                      window.open("/resume-krishil-agrawal.pdf", "_blank")
-                    }
+                    className="transition-all duration-300 hover:border-[#FF61D8] border-[#FF61D8] text-[#FF61D8] relative group"
                   >
                     <div className="flex items-center">
                       <svg
@@ -247,6 +244,26 @@ const Hero = () => {
                       </svg>
                       <span>Download CV</span>
                     </div>
+
+                    {/* Dropdown menu */}
+                    <div className="absolute left-0 top-full mt-2 w-48 bg-[#112240] border border-[#233554] rounded-lg shadow-xl invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
+                      <div className="py-1">
+                        <a
+                          href="/resume/Krishil Agrawal Resume - Web.pdf"
+                          target="_blank"
+                          className="block px-4 py-2 text-sm text-[#CCD6F6] hover:bg-[#233554] hover:text-[#FF61D8] transition-colors"
+                        >
+                          Web Development CV
+                        </a>
+                        <a
+                          href="/resume/Krishil Agrawal Resume - ML.pdf"
+                          target="_blank"
+                          className="block px-4 py-2 text-sm text-[#CCD6F6] hover:bg-[#233554] hover:text-[#FF61D8] transition-colors"
+                        >
+                          Machine Learning CV
+                        </a>
+                      </div>
+                    </div>
                   </Button>
                 </motion.div>
 
@@ -262,6 +279,8 @@ const Hero = () => {
                 >
                   <a
                     href="https://github.com/Krishilgithub"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#8892B0] hover:text-[#7B61FF] transition-colors"
                   >
                     <svg
@@ -278,37 +297,9 @@ const Hero = () => {
                     </svg>
                   </a>
                   <a
-                    href=""
-                    className="text-[#8892B0] hover:text-[#7B61FF] transition-colors"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="#"
-                    className="text-[#8892B0] hover:text-[#7B61FF] transition-colors"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="www.linkedin.com/in/krishil-agrawal-49aaa9283"
+                    href="https://www.linkedin.com/in/krishil-agrawal-49aaa9283"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#8892B0] hover:text-[#7B61FF] transition-colors"
                   >
                     <svg
@@ -322,6 +313,37 @@ const Hero = () => {
                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                         clipRule="evenodd"
                       ></path>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.kaggle.com/krishil1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#8892B0] hover:text-[#7B61FF] transition-colors"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M17.8 17.7c-.1 0-.2 0-.3-.1l-4.8-4.1L9 17.7c-.2.2-.5.2-.8 0c-.2-.2-.2-.6 0-.8l4-3.5l-4-3.4c-.2-.2-.2-.6 0-.8c.2-.2.5-.2.8 0l3.8 3.2l4.8-4.1c.2-.2.6-.1.8.1c.2.2.1.6-.1.8L13.6 13l4.5 3.9c.2.2.3.5.1.8C18.1 17.6 18 17.7 17.8 17.7z" />
+                      <path d="M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12S6.5 2 12 2S22 6.5 22 12zM12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8s8-3.6 8-8S16.4 4 12 4z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://leetcode.com/AM7GNY5zb4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#8892B0] hover:text-[#7B61FF] transition-colors"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z" />
                     </svg>
                   </a>
                 </motion.div>

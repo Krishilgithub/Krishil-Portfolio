@@ -80,7 +80,7 @@ const projects = [
     longDescription:
       "Designed and developed a fully responsive personal portfolio website to showcase skills, projects, and achievements. Implemented clean UI/UX with HTML, CSS, and JavaScript, ensuring cross-browser compatibility and mobile optimization. Hosted the site using GitHub Pages for easy access and version control.",
     technologies: ["HTML", "CSS", "JavaScript", "Git", "GitHub Pages"],
-    image: "/images/projects/portfolio.jpg",
+    image: "/images/projects/portfolio website.png",
     category: "Web Development",
     demoUrl: "#",
     githubUrl: "https://github.com/Krishilgithub",
@@ -95,7 +95,7 @@ const projects = [
     longDescription:
       "Built a web application to streamline hostel operations, including room allocation and student registration features. Created an intuitive front-end with HTML and CSS, paired with basic JavaScript for form validation and interactivity. Integrated a simple backend for data management.",
     technologies: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
-    image: "/images/projects/hostel-management.jpg",
+    image: "/images/projects/hostel management website.png",
     category: "Web Development",
     demoUrl: "#",
     githubUrl: "https://github.com/Krishilgithub",
@@ -118,7 +118,7 @@ const projects = [
       "Tailwind CSS",
       "Vite",
     ],
-    image: "/images/projects/ochi-website.jpg",
+    image: "/images/projects/ochi website.png",
     category: "Web Development",
     demoUrl: "#",
     githubUrl: "https://github.com/Krishilgithub",

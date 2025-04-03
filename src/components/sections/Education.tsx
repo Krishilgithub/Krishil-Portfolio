@@ -1,0 +1,196 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import AnimatedText from '../shared/AnimatedText';
+import Card from '../shared/Card';
+import Image from 'next/image';
+import SectionHeading from '../shared/SectionHeading';
+
+const education = [
+  {
+    id: 1,
+    degree: 'Master of Science',
+    field: 'Artificial Intelligence',
+    institution: 'Stanford University',
+    location: 'California, USA',
+    period: '2018 - 2020',
+    description: 'Specialized in deep learning and computer vision with a focus on neural network architectures.',
+    courses: ['Advanced Machine Learning', 'Computer Vision', 'Natural Language Processing', 'Reinforcement Learning'],
+    logo: '/images/logos/stanford.svg',
+    achievements: 'Graduated with distinction. Research assistant at AI Lab. Published paper on neural network optimization techniques.',
+  },
+  {
+    id: 2,
+    degree: 'Bachelor of Engineering',
+    field: 'Computer Science',
+    institution: 'Massachusetts Institute of Technology',
+    location: 'Massachusetts, USA',
+    period: '2014 - 2018',
+    description: 'Graduated with honors, focusing on algorithms and data structures with electives in AI fundamentals.',
+    courses: ['Data Structures & Algorithms', 'Artificial Intelligence', 'Probability & Statistics', 'Machine Learning'],
+    logo: '/images/logos/mit.svg',
+    achievements: 'Dean\'s List for academic excellence. Recipient of Computer Science department scholarship. Project lead for ML competition team.',
+  },
+  {
+    id: 3,
+    degree: 'Professional Certification',
+    field: 'Deep Learning Specialization',
+    institution: 'Coursera & DeepLearning.AI',
+    location: 'Online',
+    period: '2020',
+    description: 'Five-course specialization taught by Andrew Ng, covering the foundations of deep learning.',
+    courses: ['Neural Networks', 'Improving Deep Networks', 'Structuring ML Projects', 'CNNs', 'Sequence Models'],
+    logo: '/images/logos/deeplearning-ai.svg',
+    achievements: 'Completed with 98% average score. Created capstone project implementing advanced CNN architecture for medical image analysis.',
+  },
+];
+
+const Education = () => {
+  return (
+    <section id="education" className="py-24 bg-[#0A192F] relative">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#112240] to-transparent opacity-60"></div>
+      
+      <div className="container mx-auto px-4">
+        <SectionHeading 
+          title="Education" 
+          subtitle="My academic journey and qualifications in the fields of Web Development and Machine Learning."
+        />
+
+        {/* Education Timeline */}
+        <div className="relative max-w-5xl mx-auto pl-8 md:pl-16">
+          {/* Timeline Line - moved to left */}
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B61FF] via-[#FF61D8] to-[#8892B0] opacity-50" />
+
+          {education.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, x: -50, y: 20 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: index * 0.3 }}
+              className="relative mb-16"
+            >
+              {/* Timeline Dot - removed numbering */}
+              <div className="absolute left-4 md:left-8 transform -translate-x-1/2 w-8 h-8 rounded-full z-10">
+                <div className="w-full h-full rounded-full bg-[#0A192F] border-2 border-[#7B61FF] animate-pulse-slow flex items-center justify-center">
+                  {/* Removed the number span */}
+                </div>
+              </div>
+
+              {/* Content */}
+              <Card 
+                glassEffect 
+                hoverEffect
+                className="ml-12 md:ml-16 transform transition-all duration-300 hover:-translate-y-1"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+                  className="p-6"
+                >
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-4">
+                    <div className="relative w-16 h-16 bg-[#233554] rounded-full flex items-center justify-center overflow-hidden flex-shrink-0 border border-[#7B61FF]/30">
+                      <Image 
+                        src={item.logo} 
+                        alt={item.institution} 
+                        width={40} 
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-[#CCD6F6]">{item.degree} in {item.field}</h3>
+                      <div className="text-[#7B61FF] font-medium">{item.institution}</div>
+                      <div className="flex flex-wrap items-center gap-2 text-sm text-[#8892B0]">
+                        <span>{item.location}</span>
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7B61FF] opacity-50"></span>
+                        <span className="font-semibold text-[#CCD6F6]">{item.period}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#7B61FF] mb-1 uppercase tracking-wide">Overview</h4>
+                      <p className="text-[#8892B0] italic border-l-2 border-[#7B61FF] pl-4">{item.description}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#7B61FF] mb-1 uppercase tracking-wide">Achievements</h4>
+                      <p className="text-[#8892B0] border-l-2 border-[#FF61D8] pl-4">{item.achievements}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#7B61FF] mb-2 uppercase tracking-wide">Key Courses</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {item.courses.map((course) => (
+                          <span
+                            key={course}
+                            className="px-3 py-1 bg-[#233554] text-[#8892B0] rounded-full text-sm hover:bg-[#2A3F63] transition-colors cursor-default"
+                          >
+                            {course}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </Card>
+              
+              {/* Year indicator - visible on large screens */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
+                className="absolute left-0 top-4 hidden lg:block"
+              >
+                <div className="w-10 h-10 rounded-lg bg-[#233554] flex items-center justify-center text-[#7B61FF] font-mono text-sm border border-[#7B61FF]/30">
+                  {item.period.split(' - ')[0]}
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+        
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="max-w-3xl mx-auto mt-24 text-center"
+        >
+          <Card glassEffect className="border border-[#233554]/50">
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-[#CCD6F6] mb-3">Continuous Learning Journey</h3>
+              <p className="text-[#8892B0] mb-6">
+                I'm committed to staying at the forefront of AI and machine learning advancements through continuous education and research. Learning is a lifelong process in this rapidly evolving field.
+              </p>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <span className="px-4 py-2 bg-[#233554] text-[#CCD6F6] rounded-full text-sm inline-flex items-center shadow-glow">
+                  <span className="w-2 h-2 bg-[#7B61FF] rounded-full mr-2"></span>
+                  Research Publications
+                </span>
+                <span className="px-4 py-2 bg-[#233554] text-[#CCD6F6] rounded-full text-sm inline-flex items-center shadow-glow">
+                  <span className="w-2 h-2 bg-[#FF61D8] rounded-full mr-2"></span>
+                  Industry Conferences
+                </span>
+                <span className="px-4 py-2 bg-[#233554] text-[#CCD6F6] rounded-full text-sm inline-flex items-center shadow-glow">
+                  <span className="w-2 h-2 bg-[#00EEFF] rounded-full mr-2"></span>
+                  Online Courses
+                </span>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Education; 

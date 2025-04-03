@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --primary: #0A192F;
+  --secondary: #7B61FF;
+  --accent: #FF61D8;
+  --background: #112240;
+  --text: #CCD6F6;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0A192F] text-[#CCD6F6] font-['Inter'];
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-lg;
+  }
+  
+  .neon-border {
+    @apply border border-[#7B61FF] shadow-[0_0_15px_rgba(123,97,255,0.3)];
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#7B61FF] to-[#FF61D8];
+  }
+  
+  .shadow-glow {
+    @apply shadow-[0_0_20px_rgba(123,97,255,0.2)];
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Glow */
+.neon-glow {
+  box-shadow: 0 0 15px rgba(123, 97, 255, 0.3),
+              0 0 30px rgba(123, 97, 255, 0.2),
+              0 0 45px rgba(123, 97, 255, 0.1);
+}
+
+/* Hexagon Mask */
+.mask-hexagon {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M300 0 L600 150 L600 450 L300 600 L0 450 L0 150 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M300 0 L600 150 L600 450 L300 600 L0 450 L0 150 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Radial Gradient */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--arg-from, transparent) 0%, var(--arg-to, #0A192F) 100%);
+}
+
+/* Page Transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 800ms, transform 800ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+/* Circular reveal transition */
+.circle-reveal {
+  clip-path: circle(0% at center);
+  animation: circleReveal 1.5s ease-in-out forwards;
+}
+
+@keyframes circleReveal {
+  from {
+    clip-path: circle(0% at center);
+  }
+  to {
+    clip-path: circle(150% at center);
+  }
+}
+
+.circle-hide {
+  animation: circleHide 1.5s ease-in-out forwards;
+}
+
+@keyframes circleHide {
+  from {
+    clip-path: circle(150% at center);
+  }
+  to {
+    clip-path: circle(0% at center);
+  }
+} 

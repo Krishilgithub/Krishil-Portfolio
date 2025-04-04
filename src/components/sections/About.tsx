@@ -95,11 +95,24 @@ const webSkills = [
     logoComponent: (
       <div className="flex items-center justify-center w-full h-full">
         <svg
-          viewBox="0 0 26 16"
-          className="w-10 h-9"
-          style={{ fill: "#38B2AC" }}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 54 33"
+          className="w-12 h-12"
         >
-          <path d="M17.183 0C12.6 0 9.737 2.291 8.59 6.873c1.719-2.29 3.723-3.15 6.014-2.577 1.307.326 2.242 1.274 3.275 2.324 1.685 1.71 3.635 3.689 7.894 3.689 4.582 0 7.445-2.291 8.591-6.872-1.718 2.29-3.723 3.15-6.013 2.576-1.308-.326-2.243-1.274-3.276-2.324C23.39 1.98 21.44 0 17.183 0ZM8.59 10.309C4.01 10.309 1.145 12.6 0 17.182c1.718-2.291 3.723-3.15 6.013-2.577 1.308.326 2.243 1.274 3.276 2.324 1.685 1.71 3.635 3.689 7.894 3.689 4.582 0 7.445-2.29 8.59-6.872-1.718 2.29-3.722 3.15-6.013 2.577-1.307-.327-2.242-1.276-3.276-2.325-1.684-1.71-3.634-3.689-7.893-3.689Z" />
+          <g clipPath="url(#prefix__clip0)">
+            <path
+              fill="#38B2AC"
+              fillRule="evenodd"
+              d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+              clipRule="evenodd"
+            />
+          </g>
+          <defs>
+            <clipPath id="prefix__clip0">
+              <path fill="#fff" d="M0 0h54v32.4H0z" />
+            </clipPath>
+          </defs>
         </svg>
       </div>
     ),
@@ -137,11 +150,6 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     colorClass: "border-[#F05032]",
   },
-  {
-    name: "AWS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-    colorClass: "border-[#FF9900]",
-  },
 ];
 
 const About = () => {
@@ -170,7 +178,7 @@ const About = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {webSkills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -300,7 +308,7 @@ const About = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 justify-center">
             {tools.map((tool, index) => (
               <motion.div
                 key={tool.name}
@@ -343,7 +351,7 @@ const About = () => {
             glassEffect
             className="backdrop-blur-lg border border-[#233554]/50"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-6 justify-items-center">
               <div className="text-center transform transition-transform hover:scale-105">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#7B61FF] to-[#233554] flex items-center justify-center">
                   <svg
@@ -352,11 +360,12 @@ const About = () => {
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#7B61FF] mb-2">3+</h3>
-                <p className="text-[#8892B0]">Years of Experience</p>
+                <h3 className="text-2xl font-bold text-[#7B61FF] mb-2">25+</h3>
+                <p className="text-[#8892B0]">ML Projects Completed</p>
               </div>
 
               <div className="text-center transform transition-transform hover:scale-105">
@@ -369,29 +378,13 @@ const About = () => {
                   >
                     <path
                       fillRule="evenodd"
-                      d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
                       clipRule="evenodd"
                     ></path>
-                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#FF61D8] mb-2">50+</h3>
-                <p className="text-[#8892B0]">Projects Completed</p>
-              </div>
-
-              <div className="text-center transform transition-transform hover:scale-105">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#00EEFF] to-[#233554] flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-[#00EEFF] mb-2">20+</h3>
-                <p className="text-[#8892B0]">Happy Clients</p>
+                <h3 className="text-2xl font-bold text-[#FF61D8] mb-2">25+</h3>
+                <p className="text-[#8892B0]">Web Projects Completed</p>
               </div>
             </div>
           </Card>

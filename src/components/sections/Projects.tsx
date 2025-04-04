@@ -287,7 +287,7 @@ const Projects = () => {
                       className="h-full cursor-pointer overflow-hidden"
                       onClick={() => setSelectedProject(project.id)}
                     >
-                      <div className="relative">
+                      <div className="relative h-full flex flex-col">
                         <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#112240]/60 z-10"></div>
                           <Image
@@ -302,7 +302,7 @@ const Projects = () => {
                           </div>
                         </div>
 
-                        <div className="p-6">
+                        <div className="p-6 flex flex-col flex-grow">
                           <h3 className="text-xl font-bold text-[#CCD6F6] mb-2 flex items-center">
                             {project.title}
                             <div className="w-2 h-2 rounded-full bg-[#7B61FF] ml-2 animate-pulse"></div>
@@ -325,13 +325,15 @@ const Projects = () => {
                               </span>
                             )}
                           </div>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="w-full justify-center"
-                          >
-                            View Details
-                          </Button>
+                          <div className="mt-auto">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="w-full justify-center"
+                            >
+                              View Details
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </Card>
@@ -395,7 +397,7 @@ const Projects = () => {
                 className="h-full cursor-pointer overflow-hidden border border-[#233554]/30 hover:border-[#7B61FF]/30 transition-colors"
                 onClick={() => setSelectedProject(project.id)}
               >
-                <div>
+                <div className="h-full flex flex-col">
                   <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                     <Image
                       src={project.image}
@@ -410,7 +412,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold text-[#CCD6F6] mb-3">
                       {project.title}
                     </h3>
@@ -434,7 +436,7 @@ const Projects = () => {
                       )}
                     </div>
 
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 mt-auto">
                       <Button
                         variant="outline"
                         size="sm"

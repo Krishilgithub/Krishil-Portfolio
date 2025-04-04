@@ -70,9 +70,9 @@ const Education = () => {
         />
 
         {/* Education Timeline */}
-        <div className="relative max-w-5xl mx-auto pl-8 md:pl-16">
-          {/* Timeline Line - moved to left */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B61FF] via-[#FF61D8] to-[#8892B0] opacity-50" />
+        <div className="relative max-w-5xl mx-auto px-4">
+          {/* Timeline Line - centered properly */}
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B61FF] via-[#FF61D8] to-[#8892B0]"></div>
 
           {education.map((item, index) => (
             <motion.div
@@ -81,18 +81,35 @@ const Education = () => {
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, delay: index * 0.3 }}
-              className="relative mb-16"
+              className="relative mb-16 pl-10 md:pl-20"
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-1 md:left-8 top-6 transform -translate-x-1/2 w-4 h-4 rounded-full bg-[#7B61FF] z-10">
+              {/* Timeline Dot - positioned exactly on the timeline */}
+              <div 
+                className="absolute w-5 h-5 rounded-full bg-[#7B61FF] z-10" 
+                style={{ 
+                  left: '16px', 
+                  top: '24px',
+                  transform: 'translateX(-50%)',
+                  '@media (min-width: 768px)': {
+                    left: '32px'
+                  }
+                }}
+              >
                 <div className="w-full h-full rounded-full bg-[#7B61FF] animate-ping opacity-30"></div>
+              </div>
+
+              {/* Year indicator */}
+              <div className="absolute left-0 top-5 transform -translate-x-full pr-4 hidden lg:block">
+                <div className="w-10 h-10 rounded-lg bg-[#233554] flex items-center justify-center text-[#7B61FF] font-mono text-sm border border-[#7B61FF]/30">
+                  {item.period.split(" - ")[0]}
+                </div>
               </div>
 
               {/* Content */}
               <Card
                 glassEffect
                 hoverEffect
-                className="ml-12 md:ml-16 transform transition-all duration-300 hover:-translate-y-1"
+                className="transform transition-all duration-300 hover:-translate-y-1"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -165,19 +182,6 @@ const Education = () => {
                   </div>
                 </motion.div>
               </Card>
-
-              {/* Year indicator - visible on large screens */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
-                className="absolute left-0 top-4 hidden lg:block"
-              >
-                <div className="w-10 h-10 rounded-lg bg-[#233554] flex items-center justify-center text-[#7B61FF] font-mono text-sm border border-[#7B61FF]/30">
-                  {item.period.split(" - ")[0]}
-                </div>
-              </motion.div>
             </motion.div>
           ))}
         </div>

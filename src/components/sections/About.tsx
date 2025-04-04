@@ -23,32 +23,11 @@ const skills = [
     bgColorClass: "bg-[#FF6F00]",
   },
   {
-    name: "PyTorch",
-    level: 80,
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
-    colorClass: "border-[#EE4C2C]",
-    bgColorClass: "bg-[#EE4C2C]",
-  },
-  {
     name: "Scikit-learn",
     level: 90,
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
     colorClass: "border-[#F89939]",
     bgColorClass: "bg-[#F89939]",
-  },
-  {
-    name: "Computer Vision",
-    level: 80,
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
-    colorClass: "border-[#5C3EE8]",
-    bgColorClass: "bg-[#5C3EE8]",
-  },
-  {
-    name: "NLP",
-    level: 75,
-    logo: "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg",
-    colorClass: "border-[#FFBD59]",
-    bgColorClass: "bg-[#FFBD59]",
   },
   {
     name: "Data Analysis",
@@ -113,7 +92,17 @@ const webSkills = [
   {
     name: "Tailwind CSS",
     level: 85,
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    logoComponent: (
+      <div className="flex items-center justify-center w-full h-full">
+        <svg
+          viewBox="0 0 26 16"
+          className="w-10 h-9"
+          style={{ fill: "#38B2AC" }}
+        >
+          <path d="M17.183 0C12.6 0 9.737 2.291 8.59 6.873c1.719-2.29 3.723-3.15 6.014-2.577 1.307.326 2.242 1.274 3.275 2.324 1.685 1.71 3.635 3.689 7.894 3.689 4.582 0 7.445-2.291 8.591-6.872-1.718 2.29-3.723 3.15-6.013 2.576-1.308-.326-2.243-1.274-3.276-2.324C23.39 1.98 21.44 0 17.183 0ZM8.59 10.309C4.01 10.309 1.145 12.6 0 17.182c1.718-2.291 3.723-3.15 6.013-2.577 1.308.326 2.243 1.274 3.276 2.324 1.685 1.71 3.635 3.689 7.894 3.689 4.582 0 7.445-2.29 8.59-6.872-1.718 2.29-3.722 3.15-6.013 2.577-1.307-.327-2.242-1.276-3.276-2.325-1.684-1.71-3.634-3.689-7.893-3.689Z" />
+        </svg>
+      </div>
+    ),
     colorClass: "border-[#38B2AC]",
     bgColorClass: "bg-[#38B2AC]",
   },
@@ -153,21 +142,6 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
     colorClass: "border-[#FF9900]",
   },
-  {
-    name: "Google Cloud",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-    colorClass: "border-[#4285F4]",
-  },
-  {
-    name: "Kubernetes",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
-    colorClass: "border-[#326CE5]",
-  },
-  {
-    name: "PyCharm",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg",
-    colorClass: "border-[#21D789]",
-  },
 ];
 
 const About = () => {
@@ -179,7 +153,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <SectionHeading
           title="About Me"
-          subtitle="I'm a Full Stack Developer and Machine Learning Engineer specializing in developing sophisticated web applications and AI solutions. With expertise in both frontend and backend technologies, along with deep learning frameworks, I create intelligent systems that solve complex real-world problems."
+          subtitle="I'm a Full Stack Developer and Machine Learning enthusiast specializing in developing web applications and ML solutions. With experience in frontend and backend technologies, along with fundamental ML frameworks, I focus on building functional and engaging applications."
         />
 
         {/* Web Development Skills Section */}
@@ -214,13 +188,17 @@ const About = () => {
                     <div className="w-16 h-16 mb-4 relative flex items-center justify-center">
                       <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-sm"></div>
                       <div className="relative z-10">
-                        <Image
-                          src={skill.logo}
-                          alt={skill.name}
-                          width={48}
-                          height={48}
-                          className="object-contain"
-                        />
+                        {skill.logoComponent ? (
+                          skill.logoComponent
+                        ) : (
+                          <Image
+                            src={skill.logo}
+                            alt={skill.name}
+                            width={48}
+                            height={48}
+                            className="object-contain"
+                          />
+                        )}
                       </div>
                     </div>
                     <h4 className="text-[#CCD6F6] font-semibold text-lg mb-2">

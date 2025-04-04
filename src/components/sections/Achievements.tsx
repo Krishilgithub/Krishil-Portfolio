@@ -1,57 +1,63 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import AnimatedText from '../shared/AnimatedText';
-import Card from '../shared/Card';
-import SectionHeading from '../shared/SectionHeading';
+import React from "react";
+import { motion } from "framer-motion";
+import AnimatedText from "../shared/AnimatedText";
+import Card from "../shared/Card";
+import SectionHeading from "../shared/SectionHeading";
 
 const achievements = [
   {
     id: 1,
-    title: 'Kaggle Grandmaster',
-    description: 'Achieved Grandmaster status on Kaggle with multiple gold medals in ML competitions.',
-    icon: '🏆',
+    title: "Kaggle Grandmaster",
+    description:
+      "Achieved Grandmaster status on Kaggle with multiple gold medals in ML competitions.",
+    icon: "🏆",
   },
   {
     id: 2,
-    title: 'Research Publication',
-    description: 'Published research paper on advanced ML techniques in top-tier conference.',
-    icon: '📚',
+    title: "Research Publication",
+    description:
+      "Published research paper on advanced ML techniques in top-tier conference.",
+    icon: "📚",
   },
   {
     id: 3,
-    title: 'Open Source Contribution',
-    description: 'Major contributor to popular ML libraries and frameworks.',
-    icon: '💻',
+    title: "Open Source Contribution",
+    description: "Major contributor to popular ML libraries and frameworks.",
+    icon: "💻",
   },
 ];
 
 const certifications = [
   {
     id: 1,
-    title: 'Deep Learning Specialization',
-    provider: 'Coursera',
-    date: '2023',
-    link: 'https://example.com/cert1',
+    title: "Supervised Learning",
+    provider: "Coursera",
+    date: "2023",
+    link: "https://example.com/cert1",
   },
   {
     id: 2,
-    title: 'Machine Learning Engineer',
-    provider: 'Google Cloud',
-    date: '2022',
-    link: 'https://example.com/cert2',
+    title: "Unsupervised Learning",
+    provider: "Coursera",
+    date: "2023",
+    link: "https://example.com/cert2",
   },
   {
     id: 3,
-    title: 'Data Science Professional',
-    provider: 'IBM',
-    date: '2021',
-    link: 'https://example.com/cert3',
+    title: "Red Hat Certified System Administrator",
+    provider: "Red Hat",
+    date: "2022",
+    link: "https://example.com/cert3",
   },
 ];
 
-const AchievementCard = ({ achievement }: { achievement: typeof achievements[0] }) => (
+const AchievementCard = ({
+  achievement,
+}: {
+  achievement: (typeof achievements)[0];
+}) => (
   <Card glassEffect>
     <div className="text-center space-y-4">
       <span className="text-4xl">{achievement.icon}</span>
@@ -61,10 +67,16 @@ const AchievementCard = ({ achievement }: { achievement: typeof achievements[0] 
   </Card>
 );
 
-const CertificationCard = ({ certification }: { certification: typeof certifications[0] }) => (
+const CertificationCard = ({
+  certification,
+}: {
+  certification: (typeof certifications)[0];
+}) => (
   <Card glassEffect>
     <div className="space-y-2">
-      <h3 className="text-lg font-bold text-[#CCD6F6]">{certification.title}</h3>
+      <h3 className="text-lg font-bold text-[#CCD6F6]">
+        {certification.title}
+      </h3>
       <p className="text-[#7B61FF]">{certification.provider}</p>
       <p className="text-[#8892B0] text-sm">{certification.date}</p>
       <a
@@ -83,8 +95,8 @@ const Achievements = () => {
   return (
     <section id="achievements" className="py-20 bg-[#112240]">
       <div className="container mx-auto px-4">
-        <SectionHeading 
-          title="Achievements & Certifications" 
+        <SectionHeading
+          title="Achievements & Certifications"
           subtitle="Recognition and certifications in the field of machine learning."
         />
 
@@ -122,4 +134,4 @@ const Achievements = () => {
   );
 };
 
-export default Achievements; 
+export default Achievements;

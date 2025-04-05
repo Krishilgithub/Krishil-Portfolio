@@ -87,15 +87,15 @@ const FloatingIcons = () => {
     { icon: "🔮", x: 60, y: 60, delay: 3.5, size: 1.6 },
     { icon: "⚙️", x: 30, y: 30, delay: 4, size: 1.1 },
   ];
-
+  
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {icons.map((item, index) => (
         <motion.div
           key={index}
           className="absolute filter drop-shadow-glow"
-          style={{
-            left: `${item.x}%`,
+          style={{ 
+            left: `${item.x}%`, 
             top: `${item.y}%`,
             fontSize: `${item.size * 2}rem`,
           }}
@@ -169,7 +169,7 @@ const NeuralNetworkAnimation = ({ progress }: { progress: number }) => {
                 }
                 strokeWidth="1"
                 strokeDasharray="5,5"
-                animate={{
+                animate={{ 
                   strokeDashoffset: [0, -10],
                   stroke:
                     node.active && nodes[i + 1].active
@@ -188,7 +188,7 @@ const NeuralNetworkAnimation = ({ progress }: { progress: number }) => {
           }
           return null;
         })}
-
+        
         {/* Draw inner connections for more realistic neural network */}
         {innerConnections.map((conn) => (
           <motion.line
@@ -200,7 +200,7 @@ const NeuralNetworkAnimation = ({ progress }: { progress: number }) => {
             stroke={conn.active ? "#00EEFF" : "#233554"}
             strokeWidth="0.5"
             strokeDasharray="3,6"
-            animate={{
+            animate={{ 
               strokeDashoffset: [0, -18],
               opacity: conn.active ? [0.1, 0.5, 0.1] : 0.1,
             }}
@@ -213,7 +213,7 @@ const NeuralNetworkAnimation = ({ progress }: { progress: number }) => {
           />
         ))}
       </svg>
-
+      
       {/* Draw the nodes */}
       {nodes.map((node) => (
         <motion.div
@@ -266,8 +266,8 @@ const CodeLines = () => {
           className="h-1.5 rounded-full bg-gradient-to-r from-[#7B61FF] to-[#FF61D8]"
           style={{ width: `${line.width}%` }}
           initial={{ x: -100, opacity: 0 }}
-          animate={{
-            x: 0,
+          animate={{ 
+            x: 0, 
             opacity: [0, 1, 1, 0],
             width: [`${line.width}%`, `${line.width * 1.5}%`, `${line.width}%`],
           }}
@@ -300,8 +300,8 @@ const MirroredCodeLines = () => {
           className="h-1.5 rounded-full bg-gradient-to-r from-[#FF61D8] to-[#7B61FF]"
           style={{ width: `${line.width}%` }}
           initial={{ x: 100, opacity: 0 }}
-          animate={{
-            x: 0,
+          animate={{ 
+            x: 0, 
             opacity: [0, 1, 1, 0],
             width: [`${line.width}%`, `${line.width * 1.5}%`, `${line.width}%`],
           }}
@@ -330,18 +330,18 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   const [showCompleteMessage, setShowCompleteMessage] = useState(false);
   const quoteTimerRef = useRef<NodeJS.Timeout | null>(null);
   const typingTimerRef = useRef<NodeJS.Timeout | null>(null);
-
+  
   // Function for typewriter effect
   const typeEffect = (text: string, index: number = 0) => {
     if (index <= text.length) {
       setDisplayedText(text.substring(0, index));
-
+      
       typingTimerRef.current = setTimeout(() => {
         typeEffect(text, index + 1);
       }, 30); // Speed up typing to fit in 3 seconds
     }
   };
-
+  
   // Handle loading progress - precisely timed for 3 seconds
   useEffect(() => {
     // Calculate progress for exactly 3 seconds total load time
@@ -350,7 +350,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     const intervalTime = 50; // ms - more frequent updates
     const totalIncrements = totalLoadingTime / intervalTime;
     const incrementSize = 1 / totalIncrements;
-
+    
     const timer = setTimeout(() => {
       // Start progress after initial delay
       const interval = setInterval(() => {
@@ -358,65 +358,65 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           // Add slight non-linear curve to progress for natural feel
           const nextProgress =
             prev + incrementSize * (1 + 0.3 * Math.sin(prev * Math.PI));
-
+          
           if (nextProgress >= 1) {
             clearInterval(interval);
             setShowCompleteMessage(true);
-
+            
             // Final delay before exit
             setTimeout(() => {
               setIsExiting(true);
               setTimeout(onLoadingComplete, 100);
             }, 100);
-
+            
             return 1;
           }
-
+          
           return nextProgress;
         });
       }, intervalTime);
-
+      
       return () => clearInterval(interval);
     }, 300); // Shorter initial delay for 3s total
-
+    
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
-
+  
   // Handle quote cycling with typewriter effect
   useEffect(() => {
     // Start the quote cycling - show only 1-2 quotes for 3 seconds total loading
     quoteTimerRef.current = setInterval(() => {
       setCurrentQuoteIndex((prev) => {
         const nextIndex = (prev + 1) % LoadingQuotes.length;
-
+        
         // Clear any ongoing typing
         if (typingTimerRef.current) {
           clearTimeout(typingTimerRef.current);
         }
-
+        
         // Start new typing effect
         typeEffect(LoadingQuotes[nextIndex]);
-
+        
         return nextIndex;
       });
     }, 1200); // Faster cycling for 3s total time
-
+    
     // Initial typing effect
     typeEffect(LoadingQuotes[0]);
-
+    
     return () => {
       if (quoteTimerRef.current) clearInterval(quoteTimerRef.current);
       if (typingTimerRef.current) clearTimeout(typingTimerRef.current);
     };
   }, []);
-
+  
   return (
     <AnimatePresence>
-      <motion.div
+      <motion.div 
         className="fixed inset-0 bg-[#0A192F] z-50 flex flex-col items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{
+        exit={{ 
           opacity: 0,
           clipPath: ["circle(150% at center)", "circle(0% at center)"],
           transition: { duration: 0.5, ease: "anticipate" }, // Shorter exit animation
@@ -431,12 +431,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
             style={{ animationDelay: "1s" }}
           ></div>
         </div>
-
+        
         <ParticleField />
         <FloatingIcons />
         <CodeLines />
         <MirroredCodeLines />
-
+        
         {/* Main Content with Neural Network */}
         <div className="relative glass w-11/12 max-w-lg rounded-xl p-6 shadow-glow z-10">
           <div className="flex flex-col items-center">
@@ -454,7 +454,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                 </div>
               </div>
             </motion.div>
-
+            
             {/* Neural Network Animation */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -469,7 +469,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
             >
               {/* Percentage overlay */}
               <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <motion.div
+                <motion.div 
                   className="text-4xl font-bold gradient-text"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -478,10 +478,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                   {Math.floor(progress * 100)}%
                 </motion.div>
               </div>
-
+              
               <NeuralNetworkAnimation progress={progress} />
             </motion.div>
-
+            
             {/* Progress Bar */}
             <motion.div
               initial={{ width: 0, opacity: 0 }}
@@ -505,13 +505,13 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                     "linear-gradient(90deg, #7B61FF 0%, #00EEFF 50%, #FF61D8 100%)",
                   ],
                 }}
-                transition={{
-                  duration: 8,
+                transition={{ 
+                  duration: 8, 
                   repeat: Infinity,
                 }}
               />
             </motion.div>
-
+            
             {/* Loading Text */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -547,7 +547,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                   </motion.div>
                 )}
               </AnimatePresence>
-
+              
               <div className="text-sm text-[#8892B0] font-mono h-5 overflow-hidden">
                 {displayedText}
                 {!showCompleteMessage && (
@@ -556,9 +556,9 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               </div>
             </motion.div>
           </div>
-
+          
           {/* Interactive Decorative Elements */}
-          <motion.div
+          <motion.div 
             className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#7B61FF]"
             animate={{
               boxShadow: [
@@ -573,7 +573,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               repeatType: "loop",
             }}
           />
-          <motion.div
+          <motion.div 
             className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-[#FF61D8]"
             animate={{
               boxShadow: [
@@ -590,7 +590,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
             }}
           />
         </div>
-
+        
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
@@ -607,4 +607,4 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
   );
 };
 
-export default LoadingScreen;
+export default LoadingScreen; 

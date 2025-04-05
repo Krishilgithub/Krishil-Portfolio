@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { Resend } from "resend";
 
-// Initialize Resend if API key is available
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+// Try to import Resend, but don't fail if it's not available
+let Resend, resend;
+try {
+  Resend = require("resend").Resend;
+  resend = process.env.RESEND_API_KEY
+    ? new Resend(process.env.RESEND_API_KEY)
+    : null;
+} catch (error) {
+  console.warn("Resend package not available, falling back to Nodemailer only");
+  resend = null;
+}
 
 export async function POST(request: Request) {
   try {

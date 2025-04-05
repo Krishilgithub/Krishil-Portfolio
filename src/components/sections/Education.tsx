@@ -84,17 +84,7 @@ const Education = () => {
               className="relative mb-16 pl-10 md:pl-20"
             >
               {/* Timeline Dot - positioned exactly on the timeline */}
-              <div 
-                className="absolute w-5 h-5 rounded-full bg-[#7B61FF] z-10" 
-                style={{ 
-                  left: '16px', 
-                  top: '24px',
-                  transform: 'translateX(-50%)',
-                  '@media (min-width: 768px)': {
-                    left: '32px'
-                  }
-                }}
-              >
+              <div className="absolute w-5 h-5 rounded-full bg-[#7B61FF] z-10 md:left-[32px] left-[16px] top-[24px] transform -translate-x-1/2">
                 <div className="w-full h-full rounded-full bg-[#7B61FF] animate-ping opacity-30"></div>
               </div>
 

@@ -198,13 +198,13 @@ const Contact = () => {
       {/* Background elements */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#112240] to-transparent opacity-60"></div>
       <div className="absolute bottom-20 right-10 w-64 h-64 bg-[#7B61FF] rounded-full filter blur-[150px] opacity-10"></div>
-
+      
       <div className="container mx-auto px-4 relative z-10">
-        <SectionHeading
-          title="Get in Touch"
+        <SectionHeading 
+          title="Get in Touch" 
           subtitle="Feel free to reach out for collaboration opportunities, questions about my work, or just to say hello."
         />
-
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Left Column: Contact Info & Collaboration */}
           <div className="space-y-8">
@@ -242,7 +242,7 @@ const Contact = () => {
                 </div>
               </Card>
             </motion.div>
-
+            
             {/* Collaboration Opportunities */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -340,7 +340,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Right Column: Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -470,7 +470,7 @@ const Contact = () => {
             </Card>
           </motion.div>
         </div>
-
+        
         {/* Response Time Promise */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -494,4 +494,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact; 

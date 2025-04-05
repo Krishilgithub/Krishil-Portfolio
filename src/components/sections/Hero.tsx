@@ -175,8 +175,8 @@ const Hero = () => {
                             i % 3 === 0
                               ? "#7B61FF"
                               : i % 3 === 1
-                              ? "#FF61D8"
-                              : "#00EEFF",
+                                ? "#FF61D8"
+                                : "#00EEFF",
                         }}
                       ></span>
                       {tech}

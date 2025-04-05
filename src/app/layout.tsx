@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import AppWrapper from "@/components/AppWrapper";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <AppWrapper>{children}</AppWrapper>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

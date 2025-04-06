@@ -9,22 +9,23 @@ import SectionHeading from "../shared/SectionHeading";
 const achievements = [
   {
     id: 1,
-    title: "Kaggle Grandmaster",
+    title: "Kaggle Competitions",
     description:
-      "Achieved Grandmaster status on Kaggle with multiple gold medals in ML competitions.",
+      "Participated in several Kaggle competitions and developed skills in practical machine learning.",
     icon: "🏆",
   },
   {
     id: 2,
-    title: "Research Publication",
+    title: "Academic Projects",
     description:
-      "Published research paper on advanced ML techniques in top-tier conference.",
+      "Completed multiple academic ML projects with focus on practical applications.",
     icon: "📚",
   },
   {
     id: 3,
-    title: "Open Source Contribution",
-    description: "Major contributor to popular ML libraries and frameworks.",
+    title: "Open Source Learning",
+    description:
+      "Actively learning and experimenting with ML libraries and frameworks.",
     icon: "💻",
   },
 ];

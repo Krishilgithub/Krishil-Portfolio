@@ -12,6 +12,26 @@ export const metadata: Metadata = {
   title: "Krishil Agrawal Portfolio",
   description:
     "A showcase of machine learning and web development projects by Krishil Agrawal.",
+  icons: {
+    icon: [
+      {
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230A192F'/><text x='50' y='65' font-family='Arial' font-size='50' font-weight='bold' fill='%237B61FF' text-anchor='middle'>KA</text></svg>",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: [
+      {
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230A192F'/><text x='50' y='65' font-family='Arial' font-size='50' font-weight='bold' fill='%237B61FF' text-anchor='middle'>KA</text></svg>",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [
+      {
+        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230A192F'/><text x='50' y='65' font-family='Arial' font-size='50' font-weight='bold' fill='%237B61FF' text-anchor='middle'>KA</text></svg>",
+        type: "image/svg+xml",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

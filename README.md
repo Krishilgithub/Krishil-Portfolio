@@ -45,18 +45,18 @@ A modern, responsive portfolio website showcasing my skills, projects, and achie
 
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/Krishilgithub/Krishil-Portfolio.git
    cd Krishil-Portfolio
-   ```
+```
 
 2. Install dependencies:
 
-   ```bash
+```bash
    npm install
    # or
    yarn install
-   ```
+```
 
 3. Set up environment variables:
 
@@ -69,11 +69,11 @@ A modern, responsive portfolio website showcasing my skills, projects, and achie
 
 4. Run the development server:
 
-   ```bash
-   npm run dev
+```bash
+npm run dev
    # or
    yarn dev
-   ```
+```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 

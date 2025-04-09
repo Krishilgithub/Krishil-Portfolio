@@ -22,28 +22,30 @@
   .glass-card {
     @apply bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-lg;
   }
-  
+
   .neon-border {
-    @apply border border-[#7B61FF] shadow-[0_0_15px_rgba(123,97,255,0.3)];
+    @apply border border-[#7B61FF] shadow-[0_0_15px_rgba(123, 97, 255, 0.3)];
   }
-  
+
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#7B61FF] to-[#FF61D8];
   }
-  
+
   .shadow-glow {
-    @apply shadow-[0_0_20px_rgba(123,97,255,0.2)];
+    box-shadow: 0 0 20px rgba(123, 97, 255, 0.2);
   }
-  
+
   /* Hide scrollbar for Chrome, Safari and Opera */
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
 
@@ -81,9 +83,11 @@ html {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -97,9 +101,11 @@ html {
   0% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 0.7;
   }
+
   100% {
     opacity: 0.4;
   }
@@ -119,8 +125,8 @@ html {
 /* Neon Glow */
 .neon-glow {
   box-shadow: 0 0 15px rgba(123, 97, 255, 0.3),
-              0 0 30px rgba(123, 97, 255, 0.2),
-              0 0 45px rgba(123, 97, 255, 0.1);
+    0 0 30px rgba(123, 97, 255, 0.2),
+    0 0 45px rgba(123, 97, 255, 0.1);
 }
 
 /* Hexagon Mask */
@@ -171,6 +177,7 @@ html {
   from {
     clip-path: circle(0% at center);
   }
+
   to {
     clip-path: circle(150% at center);
   }
@@ -184,7 +191,8 @@ html {
   from {
     clip-path: circle(150% at center);
   }
+
   to {
     clip-path: circle(0% at center);
   }
-} 
+}

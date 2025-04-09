@@ -38,7 +38,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7B61FF] to-[#FF61D8] p-0.5">
+              <div className="w-full h-full rounded-lg bg-[#0A192F] flex items-center justify-center">
+                <span className="text-sm font-bold gradient-text">KA</span>
+              </div>
+            </div>
             <span className="text-2xl font-bold gradient-text">
               Krishil Agrawal
             </span>

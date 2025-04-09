@@ -148,7 +148,7 @@ const Projects = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const modalRef = useRef(null);
   const projectsPerPage = 3;
-  
+
   useClickAway(modalRef, () => {
     if (selectedProject !== null) {
       setSelectedProject(null);
@@ -159,10 +159,10 @@ const Projects = () => {
     "All",
     ...Array.from(new Set(projects.map((project) => project.category))),
   ];
-  
+
   const filteredProjects =
     filter === "All"
-    ? projects 
+      ? projects
       : projects.filter((project) => project.category === filter);
 
   // Get all projects with a highlight rank greater than 0, sorted by rank
@@ -196,24 +196,24 @@ const Projects = () => {
         <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#7B61FF] rounded-full filter blur-[180px] opacity-10"></div>
         <div className="absolute top-1/3 left-10 w-64 h-64 bg-[#FF61D8] rounded-full filter blur-[150px] opacity-5"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <SectionHeading 
-          title="Featured Projects" 
+        <SectionHeading
+          title="Featured Projects"
           subtitle="Explore my projects that demonstrate expertise in machine learning and web development."
         />
-        
+
         {/* Featured Projects Showcase with Navigation Arrows */}
         <div className="mb-24">
           <div className="flex justify-between items-center mb-8">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-2xl font-semibold text-[#CCD6F6] pl-4 border-l-4 border-[#7B61FF]"
-          >
-            Highlighted Work
-          </motion.h3>
+            >
+              Highlighted Work
+            </motion.h3>
 
             {/* Navigation Arrows - Only show if there are more than 3 projects */}
             {allHighlightedProjects.length > projectsPerPage && (
@@ -261,7 +261,7 @@ const Projects = () => {
               </div>
             )}
           </div>
-          
+
           <div className="relative">
             {/* Display 3 projects per page with animation */}
             <AnimatePresence mode="wait">
@@ -301,7 +301,7 @@ const Projects = () => {
                             {project.category}
                           </div>
                         </div>
-                        
+
                         <div className="p-6 flex flex-col flex-grow">
                           <h3 className="text-xl font-bold text-[#CCD6F6] mb-2 flex items-center">
                             {project.title}
@@ -331,8 +331,8 @@ const Projects = () => {
                               size="sm"
                               className="w-full justify-center"
                             >
-                            View Details
-                          </Button>
+                              View Details
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -341,7 +341,7 @@ const Projects = () => {
                 ))}
               </motion.div>
             </AnimatePresence>
-              </div>
+          </div>
 
           {/* Pagination dots for mobile */}
           {allHighlightedProjects.length > projectsPerPage && (
@@ -466,24 +466,24 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-        </div>
+      </div>
 
-        {/* Project Modal */}
-        <AnimatePresence>
+      {/* Project Modal */}
+      <AnimatePresence>
         {selectedProject !== null && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="fixed inset-0 bg-[#0A192F]/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8"
             onClick={() => setSelectedProject(null)}
-            >
-              <motion.div
-                ref={modalRef}
+          >
+            <motion.div
+              ref={modalRef}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-                transition={{ type: "spring", damping: 25 }}
+              transition={{ type: "spring", damping: 25 }}
               className="w-full max-w-4xl max-h-[80vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
@@ -494,15 +494,15 @@ const Projects = () => {
                 return (
                   <Card glassEffect className="p-0">
                     <div className="relative h-56 md:h-80 w-full overflow-hidden rounded-t-lg">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
+                      <Image
+                        src={project.image}
+                        alt={project.title}
                         width={900}
                         height={400}
                         className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
-                        <button
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent"></div>
+                      <button
                         className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0A192F]/60 backdrop-blur-sm flex items-center justify-center text-[#CCD6F6] border border-[#233554] hover:border-[#7B61FF] transition-colors"
                         onClick={() => setSelectedProject(null)}
                       >
@@ -519,8 +519,8 @@ const Projects = () => {
                             strokeWidth={2}
                             d="M6 18L18 6M6 6l12 12"
                           />
-                          </svg>
-                        </button>
+                        </svg>
+                      </button>
                     </div>
 
                     <div className="p-6 md:p-8">
@@ -567,7 +567,7 @@ const Projects = () => {
                           </a>
                         </div>
                       </div>
-                      
+
                       <div className="mb-8">
                         <h3 className="text-lg font-semibold text-[#7B61FF] mb-3">
                           Project Overview
@@ -582,17 +582,17 @@ const Projects = () => {
                           Technologies Used
                         </h3>
                         <div className="flex flex-wrap gap-3">
-                              {project.technologies.map((tech) => (
-                                <span
-                                  key={tech}
+                          {project.technologies.map((tech) => (
+                            <span
+                              key={tech}
                               className="px-3 py-1 bg-[#233554] text-[#CCD6F6] rounded-lg text-sm"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                          
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
                       <div className="flex gap-4">
                         <Button
                           variant="primary"
@@ -601,7 +601,7 @@ const Projects = () => {
                           onClick={() => window.open(project.demoUrl, "_blank")}
                         >
                           View Live Demo
-                            </Button>
+                        </Button>
                         <Button
                           variant="outline"
                           size="lg"
@@ -611,18 +611,18 @@ const Projects = () => {
                           }
                         >
                           View Source Code
-                            </Button>
+                        </Button>
                       </div>
                     </div>
                   </Card>
                 );
               })()}
             </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
-export default Projects; 
+export default Projects;
